@@ -152,3 +152,79 @@
 # print(f"{s.rstrip()}")  # Output: "   I am a title"
 # print(f"{s.lstrip()}")  # Output: "I am a title   "
 
+
+
+#chain methods Example
+
+#itertools
+#a=(1,2,3,4,5)
+# for i in a:
+#     print(i)
+# import itertools
+# for pair in itertools.combinations(a, 2):
+#     print(pair)  #output: (1, 2), (1, 3), (1, 4), (1, 5), (2, 3), (2, 4), (2, 5), (3, 4), (3, 5), (4, 5)
+# print(list(itertools.permutations(a, 2)))  #output: [(1, 2), (1, 3), (1, 4), (1, 5), (2, 1), (2, 3), (2, 4), (2, 5), (3, 1), (3, 2), (3, 4), (3, 5), (4, 1), (4, 2), (4, 3), (4, 5), (5, 1), (5, 2), (5, 3), (5, 4)]    
+
+# from itertools import product
+# size=["small","medium","large"]
+# flavours=["chocolate","vanilla","strawberry"]
+# for i in product(size, flavours):
+#     print(i)  #output: ('small', 'chocolate'), ('small', 'vanilla'), ('small', 'strawberry'), ('medium', 'chocolate'), ('medium', 'vanilla'), ('medium', 'strawberry'), ('large', 'chocolate'), ('large', 'vanilla'), ('large', 'strawberry')
+
+#summary of the code:
+# The code demonstrates the use of itertools.product to generate all possible combinations of size and flavour for a product catalog.and it understands
+
+# from itertools import chain
+# results=chain(size, flavours)
+# for x in results:
+#     print(x)  #output: small, medium, large, chocolate, vanilla, strawberry 
+
+# from itertools import islice
+# # Example of islice
+# numbers=range(1000000)
+# first_ten_numbers=islice(numbers, 10) # Get the first 10 numbers. numbers is an iterable that generates numbers from 0 to 999999. islice takes the first 10 numbers from this iterable and returns an iterator. We can convert this iterator to a list to see the first 10 numbers.
+# print(list(first_ten_numbers))  #output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+# def batch(iterable, size):
+#     """Batch data into tuples of a specified size."""
+#     it = iter(iterable)
+#     while batch := tuple(itertools.islice(it, size)):
+#         yield batch
+
+data = range(10)
+# for batch_data in batch(data, 3):
+#     print(batch_data)  #output: (0, 1, 2), (3, 4, 5), (6, 7, 8), (9,)
+
+# := => The walrus operator (:=) is used to assign a value to a variable as part of an expression. In this case, it assigns the result of tuple(itertools.islice(it, size)) to the variable batch and checks if it is truthy (not empty). If it is truthy, the while loop continues; otherwise, it stops.
+
+
+# enumerate() => enumerate() is a built-in function in Python that takes an iterable (like a list, tuple, or string) and returns an iterator that produces pairs of an index and the corresponding item from the iterable. The index starts at 0 by default, but you can specify a different starting index if desired.
+ 
+# restaurant_menu = ["Pizza", "Burger", "Pasta", "Salad"]
+# for i, restaurant_menu in enumerate(restaurant_menu, start=1): 
+#     print(f"{i}. {restaurant_menu}")  #output: 1. Pizza, 2. Burger, 3. Pasta, 4. Salad
+
+
+# #zip() => The zip() function in Python is used to combine two or more iterables (like lists, tuples, or strings) into a single iterable of tuples. Each tuple contains elements from the input iterables that are at the same index. The resulting iterable stops when the shortest input iterable is exhausted.
+# restaurant_menu = ["Pizza", "Burger", "Pasta", "Salad"]
+# ratings = [4.5, 4.0, 4.2, 3.8]
+# for item, rating in zip(restaurant_menu, ratings):
+#     print(f"{item}: {rating}")  #output: Pizza: 4.5, Burger: 4.0, Pasta: 4.2, Salad: 3.8
+
+
+# restaurant_menu = ["Pizza", "Burger", "Pasta", "Salad"]
+# ratings = [4.5, 4.0, 4.2, 3.8]
+# cities = ["New York", "Los Angeles", "Chicago"]
+# for item, rating, city in zip(restaurant_menu, ratings, cities):
+#     print(f"{item}: {rating} ({city})")  #output: Pizza: 4.5 (New York), Burger: 4.0 (Los Angeles), Pasta: 4.2 (Chicago)
+
+
+# #eval() => The eval() function in Python is used to evaluate a string as a Python expression and return the result. It can execute simple expressions, mathematical calculations, and even more complex code, but it should be used with caution due to security risks when evaluating untrusted input. 
+# exp="2 + 3 * 4"
+# result = eval(exp)
+# print(result)  #output: 14
+
+eval("10 + 20")  #output: 30
+
+
