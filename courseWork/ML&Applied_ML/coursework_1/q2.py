@@ -22,8 +22,8 @@ def learn_parameters(X, y, k, tau, lam):
     
     beta=np.random.rand(m + 1, 1)
     predictions = X_new @ beta
-    errors = predictions - y
-    prev_cost = (1/(2*n)) * np.sum(errors ** 2)
+    errors=predictions - y
+    prev_cost=(1/(2*n)) * np.sum(errors ** 2)
 
     cur_cost = prev_cost #fall back , if the loop doesn't run at all.
 
@@ -45,5 +45,5 @@ def learn_parameters(X, y, k, tau, lam):
     return beta, cur_cost
 
 
-    
+
     
