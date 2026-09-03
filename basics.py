@@ -1,3 +1,18 @@
+# PYTHON BASICS NOTES
+# ==================
+#
+# Contents
+# 1. Basic syntax, variables, and expressions
+# 2. Operators and short-circuit evaluation
+# 3. Lists, sets, and set operations
+# 4. Binary and decimal number systems
+# 5. String formatting and methods
+# 6. Itertools and built-in iteration helpers
+# 7. Evaluating expressions
+
+
+# 1. BASIC SYNTAX, VARIABLES, AND EXPRESSIONS
+# --------------------------------------------
 # print("hello world")
 # age=27
 # s="hdgKJHDKJVALKSAS"
@@ -6,7 +21,9 @@
 # # %whos is used to get all the details about the variables in the current file. it is only available in jupyter notebook. it will not work in here.
 
 
-# #BODMAS
+# 2. OPERATORS AND SHORT-CIRCUIT EVALUATION
+# -----------------------------------------
+# BODMAS describes the order in which arithmetic expressions are evaluated.
 # # b - BRACKETS          => () paranethesis, [] square brackets, {} curly brackets
 # # o - ORDERS            => ** Exponents
 # # d - DIVISION          => / DIVISION, // FLOOR DIVISION, % MODULUS
@@ -15,7 +32,7 @@
 # # s - SUBTRACTION       => - SUBTRACTION
 
 
-# #RELATIONAL OPERATORS
+# Relational operators compare two values and return True or False.
 # # == : EQUAL TO
 # # != : NOT EQUAL TO
 # # >  : GREATER THAN
@@ -26,7 +43,7 @@
 # print(10==10.0)
 
 
-# #BOOLEAN OPERATORS
+# Boolean operators combine or invert conditions.
 # # and : Returns True if both statements are true
 # # or : Returns True if one of the statements is true
 # # not : Returns True if the statement is false
@@ -40,28 +57,31 @@
 # #NOT operator
 # print(not(10>5 and 10<20)) #False
 
-#Short circuit
+# Short-circuit evaluation stops as soon as the final result is known.
 
 # name = "John"
 # if len(name) > 0 and name[0] == "n":
 #     print("Name is long and has 'n' at index 5")
 
-#Membership Operators
+# Membership operators test whether a value exists in a sequence.
 # in : Returns True if a sequence with the specified value is present in the object
 # not in : Returns True if a sequence with the specified value is not present in the object
 
-#identity Operators
+# Identity operators test whether two names refer to the same object.
 # is : Returns True if both variables are the same object
 # is not : Returns True if both variables are not the same object
 
 
-#Lists and Set
+# 3. LISTS, SETS, AND SET OPERATIONS
+# ----------------------------------
+# Lists are ordered and mutable; sets are unordered, mutable, and unique.
 #1. Lists are ordered, mutable, and allow duplicate elements. 
 # They are defined using square brackets [] or the list() function.
 #2. Sets are unordered, mutable, and do not allow duplicate elements. 
 # They are defined using curly braces {} or the set() function.     
 
-#list functions =>extend,delete,pop,remove,insert,append,sort,reverse
+# Common list operations: extend, delete, pop, remove, insert, append,
+# sort, and reverse.
 #Example of list functions
 # my_list = [1, 2, 3]
 # my_list.append(4)  # Adds 4 to the end of the list
@@ -83,26 +103,26 @@
 
 
 
-#Example of set functions
+# Set methods example.
 # my_set = {1, 2, 3}
 # my_set.add(4)  # Adds 4 to the set
 # my_set.remove(2)  # Removes 2 from the set
 # print(my_set)  # Output: {1, 3, 4}
 
 
-#set operations
+# Set operations: union, intersection, and difference.
 # union() : Returns a set containing all unique elements from both sets
 # intersection() : Returns a set containing only the elements that are common to both sets
 # difference() : Returns a set containing elements that are in the first set but not in the second set  
 
-#example of set operations
+# Set operations example.
 # set1 = {1, 2, 3}
 # set2 = {3, 4, 5}
 # print(set1.union(set2))  # Output: {1, 2, 3, 4, 5}
 # print(set1.intersection(set2))  # Output: {3}
 # print(set1.difference(set2))  # Output: {1, 2}
 
-#using operators for set operations
+# Set operations can also use |, &, and - operators.
 # set1 = {1, 2, 3}
 # set2 = {3, 4, 5}
 # print(set1 | set2)  # Output: {1, 2, 3, 4, 5}
@@ -111,22 +131,26 @@
 
 
 
-#binary number system
+# 4. BINARY AND DECIMAL NUMBER SYSTEMS
+# -------------------------------------
+# Binary is base 2 and uses only the digits 0 and 1.
 #Binary number system is a base-2 number system that uses only two digits: 0 and 1. 
 # Each digit in a binary number is called a bit. The rightmost bit represents 2^0, the next bit to the left represents 2^1, then 2^2, and so on.  
 
-#binary to decimal conversion
+# Binary to decimal conversion.
 #To convert a binary number to decimal, we multiply each bit by its corresponding power of 2 and sum the results. 
 # For example, the binary number 1011 can be converted to decimal as follows:
 # 1011 in binary is equal to 1 * 2^3 + 0 * 2^2 + 1 * 2^1 + 1 * 2^0 = 8 + 0 + 2 + 1 = 11 in decimal.
 
-#decimal to binary conversion
+# Decimal to binary conversion.
 #To convert a decimal number to binary, we repeatedly divide the number by 2 and record
 #the remainders. The binary representation is obtained by reading the remainders in reverse order.
 # For example, to convert the decimal number 13 to binary:
 
 
-#f-string
+# 5. STRING FORMATTING AND METHODS
+# --------------------------------
+# f-strings insert expressions directly into a string.
 # print(f"Hello, my name is {name} and I am {age} years old.")
 
 # number = 100000
@@ -140,23 +164,25 @@
 # print(f"{n.swapcase()}")  # Output: I AM A TITLE
 
 
-#startswith
+# startswith() checks the beginning of a string.
 # s = "I am a title"
 # print(f"{s.startswith('I')}")  # Output: True
 
-#endswith
+# endswith() checks the end of a string.
 # print(f"{s.endswith('title')}")  # Output: True
 
-#rstrip and lstrip
+# rstrip() and lstrip() remove whitespace from one side of a string.
 # s = "   I am a title   "
 # print(f"{s.rstrip()}")  # Output: "   I am a title"
 # print(f"{s.lstrip()}")  # Output: "I am a title   "
 
 
 
-#chain methods Example
+# Chaining methods applies multiple string operations in sequence.
 
-#itertools
+# 6. ITERTOOLS AND BUILT-IN ITERATION HELPERS
+# -------------------------------------------
+# itertools provides efficient, lazy tools for working with iterables.
 #a=(1,2,3,4,5)
 # for i in a:
 #     print(i)
@@ -171,7 +197,7 @@
 # for i in product(size, flavours):
 #     print(i)  #output: ('small', 'chocolate'), ('small', 'vanilla'), ('small', 'strawberry'), ('medium', 'chocolate'), ('medium', 'vanilla'), ('medium', 'strawberry'), ('large', 'chocolate'), ('large', 'vanilla'), ('large', 'strawberry')
 
-#summary of the code:
+# Product combinations summary:
 # The code demonstrates the use of itertools.product to generate all possible combinations of size and flavour for a product catalog.and it understands
 
 # from itertools import chain
@@ -196,17 +222,18 @@ data = range(10)
 # for batch_data in batch(data, 3):
 #     print(batch_data)  #output: (0, 1, 2), (3, 4, 5), (6, 7, 8), (9,)
 
-# := => The walrus operator (:=) is used to assign a value to a variable as part of an expression. In this case, it assigns the result of tuple(itertools.islice(it, size)) to the variable batch and checks if it is truthy (not empty). If it is truthy, the while loop continues; otherwise, it stops.
+# The walrus operator (:=) assigns a value as part of an expression.
 
 
-# enumerate() => enumerate() is a built-in function in Python that takes an iterable (like a list, tuple, or string) and returns an iterator that produces pairs of an index and the corresponding item from the iterable. The index starts at 0 by default, but you can specify a different starting index if desired.
+# enumerate() returns index-value pairs for an iterable. The index starts at 0
+# by default, or at a value supplied with start=.
  
 # restaurant_menu = ["Pizza", "Burger", "Pasta", "Salad"]
 # for i, restaurant_menu in enumerate(restaurant_menu, start=1): 
 #     print(f"{i}. {restaurant_menu}")  #output: 1. Pizza, 2. Burger, 3. Pasta, 4. Salad
 
 
-# #zip() => The zip() function in Python is used to combine two or more iterables (like lists, tuples, or strings) into a single iterable of tuples. Each tuple contains elements from the input iterables that are at the same index. The resulting iterable stops when the shortest input iterable is exhausted.
+# zip() combines values at matching positions and stops at the shortest input.
 # restaurant_menu = ["Pizza", "Burger", "Pasta", "Salad"]
 # ratings = [4.5, 4.0, 4.2, 3.8]
 # for item, rating in zip(restaurant_menu, ratings):
@@ -220,7 +247,10 @@ data = range(10)
 #     print(f"{item}: {rating} ({city})")  #output: Pizza: 4.5 (New York), Burger: 4.0 (Los Angeles), Pasta: 4.2 (Chicago)
 
 
-# #eval() => The eval() function in Python is used to evaluate a string as a Python expression and return the result. It can execute simple expressions, mathematical calculations, and even more complex code, but it should be used with caution due to security risks when evaluating untrusted input. 
+# 7. EVALUATING EXPRESSIONS
+# -------------------------
+# eval() evaluates a string as a Python expression. Never use it with
+# untrusted input because it can execute arbitrary code.
 # exp="2 + 3 * 4"
 # result = eval(exp)
 # print(result)  #output: 14
