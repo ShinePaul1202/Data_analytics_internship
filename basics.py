@@ -9,6 +9,10 @@
 # 5. String formatting and methods
 # 6. Itertools and built-in iteration helpers
 # 7. Evaluating expressions
+# 8. Dictionaries
+# 9. NumPy arrays
+# 10. Pandas DataFrames
+# 11. Data visualization
 
 
 # 1. BASIC SYNTAX, VARIABLES, AND EXPRESSIONS
@@ -256,5 +260,93 @@ data = range(10)
 # print(result)  #output: 14
 
 eval("10 + 20")  #output: 30
+
+
+# 8. DICTIONARIES
+# ---------------
+# A dictionary stores data as key-value pairs. Keys must be unique and
+# immutable, while values can be of any type.
+# student = {"name": "Asha", "age": 21, "course": "Python"}
+# print(student["name"])  #output: Asha
+# print(student.get("grade", "Not available"))  #output: Not available
+
+# Common dictionary operations include adding, updating, and deleting values.
+# student["age"] = 22  # Updates an existing value
+# student["grade"] = "A"  # Adds a new key-value pair
+# student.update({"city": "Delhi"})  # Adds or updates multiple values
+# student.pop("course")  # Removes and returns the value for course
+# print(student.keys())
+# print(student.values())
+# print(student.items())
+
+# Loop through dictionary keys and values.
+# for key, value in student.items():
+#     print(f"{key}: {value}")
+
+
+# 9. NUMPY ARRAYS
+# ---------------
+# A NumPy array stores values of the same type and supports fast numerical
+# operations. NumPy must be installed before importing it.
+# import numpy as np
+# numbers = np.array([1, 2, 3, 4])
+# matrix = np.array([[1, 2], [3, 4]])
+# print(numbers.shape)  #output: (4,)
+# print(matrix.shape)  #output: (2, 2)
+# print(numbers * 2)  #output: [2 4 6 8]
+
+# Useful NumPy functions create arrays and calculate summary statistics.
+# zeros = np.zeros((2, 3))
+# ones = np.ones(4)
+# sequence = np.arange(0, 10, 2)  #output: [0 2 4 6 8]
+# print(numbers.mean())
+# print(numbers.sum())
+# print(numbers.max())
+
+
+# 10. PANDAS DATAFRAMES
+# ---------------------
+# A DataFrame is a two-dimensional table with labelled rows and columns.
+# It is useful for cleaning, analysing, and transforming structured data.
+# import pandas as pd
+# data = {
+#     "name": ["Asha", "Ravi", "Mina"],
+#     "score": [85, 92, 78],
+#     "passed": [True, True, True],
+# }
+# students = pd.DataFrame(data)
+# print(students.head())  # Shows the first five rows
+# print(students["score"])  # Selects one column
+# print(students[students["score"] > 80])  # Filters rows
+
+# Common DataFrame operations inspect, clean, and summarise tabular data.
+# print(students.shape)  # Returns (number of rows, number of columns)
+# print(students.info())
+# print(students.describe())
+# students["score"] = students["score"].fillna(0)
+# average_score = students["score"].mean()
+# grouped_scores = students.groupby("passed")["score"].mean()
+
+
+# 11. DATA VISUALIZATION
+# ----------------------
+# Data visualization presents patterns, comparisons, and trends in charts.
+# Choose a chart based on the question: line charts show trends, bar charts
+# compare categories, histograms show distributions, and scatter plots show
+# relationships between two numerical variables.
+# import matplotlib.pyplot as plt
+# months = ["Jan", "Feb", "Mar", "Apr"]
+# sales = [12, 18, 15, 24]
+# plt.plot(months, sales, marker="o")
+# plt.title("Monthly Sales")
+# plt.xlabel("Month")
+# plt.ylabel("Sales")
+# plt.grid(True)
+# plt.show()
+
+# Pandas can create charts directly from a DataFrame.
+# students["score"].plot(kind="bar", title="Student Scores")
+# plt.ylabel("Score")
+# plt.show()
 
 
