@@ -1,0 +1,5 @@
+Product,Review,Sentiment,Confidence
+Headphones,The sound quality is excellent.,POSITIVE,0.9999
+Phone Case,Poor quality and broke after two days.,NEGATIVE,0.9995
+Laptop Stand,Very useful and easy to use.,POSITIVE,0.9998
+Keyboard,The keys feel stiff and uncomfortable.,NEGATIVE,0.9997
